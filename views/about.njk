@@ -1,0 +1,24 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+<title>Home - Tool Live</title>
+{% endblock %}
+
+{% block content %}
+
+<div id="wrapper">
+    <img src="{{ data.avatar_url }}" alt="Imagem de {{ data.name }}">
+    <h1>{{ data.name }}</h1>
+    <h2>{{ data.musicians }}</h2>
+    <p>{{ data.about }}</p>
+</div>
+
+<div id="footer" class="links">
+
+    {% for link in data.links %}
+        <a href="{{ link.url }}" target="_blank">{{ link.name }}</a>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
